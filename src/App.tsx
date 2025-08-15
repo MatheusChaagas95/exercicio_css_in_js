@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import EstiloGlobal from './styles/EstiloGlobal'
+import Header from './components/Header'
+import HeroSection from './components/Hero'
+import Form from './components/Formulario'
+import CardVaga from './components/Vaga'
+import ListaVagasWrapper from './components/ListaVagas'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <EstiloGlobal />
+      <Header> Portal de Vagas</Header>
+      <HeroSection>
+        <h2>Encontre sua próxima oportunidade!</h2>
+      </HeroSection>
+      <Form>
+        <input type="text" placeholder="Nome" />
+        <input type="email" placeholder="E-mail" />
+        <textarea placeholder="Mensagem" />
+        <button type="submit">Enviar</button>
+      </Form>
+      <ListaVagasWrapper>
+        <CardVaga>
+          <h3>Desenvolvedor Front-end</h3>
+          <p>São Paulo - SP</p>
+        </CardVaga>
+        <CardVaga>
+          <h3>Analista de Marketing</h3>
+          <p>Rio de Janeiro - RJ</p>
+        </CardVaga>
+        <CardVaga>
+          <h3>Engenheiro de Dados</h3>
+          <p>Belo Horizonte - MG</p>
+        </CardVaga>
+      </ListaVagasWrapper>
+    </>
+  )
 }
 
-export default App;
+export default App
