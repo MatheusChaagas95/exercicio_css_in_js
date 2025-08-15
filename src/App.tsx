@@ -1,13 +1,22 @@
+<<<<<<< HEAD
 import EstiloGlobal from './styles/EstiloGlobal'
 import Header from './components/Header'
 import HeroSection from './components/Hero'
 import Form from './components/Formulario'
 import CardVaga from './components/Vaga'
 import ListaVagasWrapper from './components/ListaVagas'
+=======
+import Header from './components/Cabecalho'
+import Hero from './components/Hero'
+import ListaVagas from './containers/ListaVagas'
+
+import './global.css'
+>>>>>>> 6b75ea68847c2a67da4aa2679f111c99ca9da97a
 
 function App() {
   return (
     <>
+<<<<<<< HEAD
       <EstiloGlobal />
       <Header> Portal de Vagas</Header>
       <HeroSection>
@@ -33,6 +42,13 @@ function App() {
           <p>Belo Horizonte - MG</p>
         </CardVaga>
       </ListaVagasWrapper>
+=======
+      <Header />
+      <Hero />
+      <div className="container">
+        <ListaVagas />
+      </div>
+>>>>>>> 6b75ea68847c2a67da4aa2679f111c99ca9da97a
     </>
   )
 }
