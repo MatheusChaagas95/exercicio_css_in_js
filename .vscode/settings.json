@@ -2,5 +2,13 @@
   "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
   "source.fixAll.eslint": "explicit"
+<<<<<<< HEAD
   }
+=======
+},
+"cSpell.words": [
+	"Cripto",
+	"Sênior"
+]
+>>>>>>> 323d5d6 (commit organização final do código)
 }

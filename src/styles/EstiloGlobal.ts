@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { createGlobalStyle } from 'styled-components'
 
 const EstiloGlobal = createGlobalStyle`
@@ -24,3 +25,21 @@ const EstiloGlobal = createGlobalStyle`
 `
 
 export default EstiloGlobal
+=======
+import { createGlobalStyle } from "styled-components"
+
+const GlobalStyle = createGlobalStyle`
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8f9fa;
+  }
+`
+
+export default GlobalStyle
+>>>>>>> 323d5d6 (commit organização final do código)
