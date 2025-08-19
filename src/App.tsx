@@ -4,7 +4,6 @@ import Cabecalho from './components/Cabecalho';
 import Hero from './components/Hero';
 import FormVagas from './components/FormVagas';
 import Vagas from './components/Vagas';
-import './App.css';
 
 interface Vaga {
   id: number;
