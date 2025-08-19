@@ -1,105 +1,96 @@
-import { FormEvent, useState } from 'react'
-<<<<<<< HEAD
+import { useState, FormEvent } from 'react';
+import styled from 'styled-components';
 
-import styles from './FormVagas.module.css'
-=======
-import styled from 'styled-components'
+interface FormVagasProps {
+  onSearch: (termo: string) => void;
+}
+
+const Container = styled.section`
+  background: #f8fafc;
+  padding: 2rem 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: center;
+`;
+
+const Title = styled.h3`
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+`;
+
+const Subtitle = styled.p`
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+`;
 
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 16px;
-  background: #f8f9fa;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  gap: 1rem;
+  align-items: center;
+`;
+
+const Input = styled.input`
+  width: 100%;
   max-width: 400px;
-  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
 
-  input,
-  textarea {
-    padding: 8px;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    font-size: 1rem;
+  &:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
   }
 
-  button {
-    padding: 10px;
-    background: #0d6efd;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    &:hover {
-      background: #0056b3;
-    }
+  &::placeholder {
+    color: #9ca3af;
   }
+`;
 
-  h2 {
-    text-align: center;
-    color: #343a40;
-  }
+const Button = styled.button`
+  background: #2563eb;
+  color: #fff;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  min-width: 120px;
 
-  label {
-    font-weight: bold;
-    color: #495057;
-  }
+  &:hover { background: #1d4ed8; }
+  &:active { background: #1e40af; }
+`;
 
-  @media (max-width: 600px) {
-    max-width: 100%;
-    padding: 8px;
-  }
-`
->>>>>>> 323d5d6 (commit organização final do código)
+const FormVagas = ({ onSearch }: FormVagasProps) => {
+  const [term, setTerm] = useState<string>('');
 
-type Props = {
-  aoPesquisar: (termo: string) => void
-}
-
-const FormVagas = ({ aoPesquisar }: Props) => {
-  const [termo, setTermo] = useState<string>('')
-
-  const aoEnviarForm = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-<<<<<<< HEAD
-    aoPesquisar(termo.toLocaleLowerCase())
-  }
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    onSearch(term);
+  };
 
   return (
-    <form className={styles.form} onSubmit={aoEnviarForm}>
-      <input
-        className={styles.campo}
-        placeholder="Front-end, fullstack, node, design"
-        onChange={(e) => setTermo(e.target.value)}
-        type="search"
-      />
-      <button className={styles.btnPesquisar} type="submit">
-        Pesquisar
-      </button>
-    </form>
-  )
-}
-=======
-    aoPesquisar(termo.toLowerCase())
-  }
+    <Container>
+      <Title>Pesquisar Vagas</Title>
+      <Subtitle>Digite o termo de pesquisa:</Subtitle>
+      <Form onSubmit={handleSubmit}>
+        <Input
+          type="text"
+          placeholder="Ex: Front-end, React..."
+          value={term}
+          onChange={(e) => setTerm(e.target.value)}
+        />
+        <Button type="submit">Pesquisar</Button>
+      </Form>
+    </Container>
+  );
+};
 
-  return (
-    <Form onSubmit={aoEnviarForm}>
-      <h2>Pesquisar Vagas</h2>
-      <label htmlFor="pesquisa">Digite o termo de pesquisa:</label>
-      <input
-        type="text"
-        id="pesquisa"
-        value={termo}
-        onChange={(e) => setTermo(e.target.value)}
-        placeholder="Ex: Front-end, React..."
-      />
-      <button type="submit">Pesquisar</button>
-    </Form>
-  )
-}
-
->>>>>>> 323d5d6 (commit organização final do código)
-export default FormVagas
+export default FormVagas;
