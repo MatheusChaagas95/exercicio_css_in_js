@@ -1,40 +1,59 @@
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 const HeroContainer = styled.section`
-  background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
-  color: white;
-  padding: 3rem 1rem;
-  text-align: center;
-  min-height: 200px;
+  height: 360px;
+  width: 100%;
+  background-image: url('https://cdn.pixabay.com/photo/2018/08/10/15/45/woman-3597101_1280.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-`;
 
-const HeroContent = styled.div`
-  max-width: 800px;
-  margin: 0 auto;
-`;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(166, 120, 125, 0.7);
+  }
 
-const HeroTitle = styled.h2`
-  font-size: 2rem;
-  font-weight: 600;
-  margin: 0;
-  line-height: 1.2;
+  div {
+    position: relative;
+    color: #eee;
+  }
 
   @media (max-width: 768px) {
-    font-size: 1.5rem;
+    height: auto;
+    padding: 24px 0;
   }
-`;
+`
 
-const Hero = () => {
+// Título do Hero
+const HeroTitle = styled.h1`
+  font-family: 'Gloock', serif;
+  font-size: 48px;
+  margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
+`
+
+const Hero: React.FC = () => {
   return (
     <HeroContainer>
-      <HeroContent>
-        <HeroTitle>As melhores vagas para tecnologia, design e artes visuais.</HeroTitle>
-      </HeroContent>
+      <div>
+        <HeroTitle>
+          As melhores vagas para tecnologia, design e artes visuais.
+        </HeroTitle>
+      </div>
     </HeroContainer>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero
